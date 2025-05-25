@@ -1,73 +1,113 @@
-# Welcome to your Lovable project
 
-## Project info
+# BTCLearn - Bitcoin-Only Resources Hub
 
-**URL**: https://lovable.dev/projects/aaff61ab-9021-4724-a8a1-96999e69ae55
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## How can I edit this code?
+A comprehensive, curated collection of Bitcoin-only resources for education, development, and adoption. BTCLearn provides a clean, searchable interface to discover the best Bitcoin resources available.
 
-There are several ways of editing your application.
+## 🚀 Live Site
 
-**Use Lovable**
+Visit [BTCLearn](https://btclearn.lovable.app) to explore the resource hub.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/aaff61ab-9021-4724-a8a1-96999e69ae55) and start prompting.
+## 🎯 Features
 
-Changes made via Lovable will be committed automatically to this repo.
+- **60+ Curated Resources**: Carefully selected Bitcoin-only content
+- **Organized Categories**: Education, Podcasts, Wallets, Merchants, Nodes, Community, Tools, Security, and Tutorials
+- **Search & Filter**: Find exactly what you're looking for
+- **Top Recommendations**: Featured resources for getting started
+- **Mobile Responsive**: Works perfectly on all devices
+- **Open Source**: Community-driven and transparent
 
-**Use your preferred IDE**
+## 📚 Resource Categories
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Educational Resources
+- Bitcoin documentation and guides
+- Books and research papers
+- Developer resources
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Podcasts
+- Bitcoin-focused audio content
+- Interviews with thought leaders
+- Technical discussions
 
-Follow these steps:
+### Wallets & Security
+- Hardware and software wallets
+- Security best practices
+- Privacy guides
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Merchant Solutions
+- Payment processors
+- Point-of-sale systems
+- Business integration tools
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Node Management
+- Full node software
+- Lightning Network tools
+- Self-hosting solutions
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Community
+- Forums and discussion platforms
+- Meetups and conferences
+- Educational organizations
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🛠 Technology Stack
 
-**Edit a file directly in GitHub**
+- **Frontend**: React + TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Build Tool**: Vite
+- **Icons**: Lucide React
+- **Deployment**: Lovable Platform
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🤝 Contributing
 
-**Use GitHub Codespaces**
+We welcome contributions from the Bitcoin community! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Quick Start for Contributors
 
-## What technologies are used for this project?
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/yourusername/btclearn.git`
+3. Install dependencies: `npm install`
+4. Start development server: `npm run dev`
+5. Make your changes
+6. Submit a pull request
 
-This project is built with:
+### Adding Resources
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+To add a new Bitcoin resource:
 
-## How can I deploy this project?
+1. Open `src/pages/Index.tsx`
+2. Add your resource to the appropriate category array
+3. Follow the existing format and guidelines
+4. Ensure the resource is Bitcoin-only and valuable to the community
 
-Simply open [Lovable](https://lovable.dev/projects/aaff61ab-9021-4724-a8a1-96999e69ae55) and click on Share -> Publish.
+## 🎯 Project Goals
 
-## Can I connect a custom domain to my Lovable project?
+- **Bitcoin-Only**: Exclusively focus on Bitcoin, no altcoins or blockchain projects
+- **Educational**: Promote learning and understanding of Bitcoin
+- **Accessible**: Make Bitcoin resources easy to discover and use
+- **Community-Driven**: Powered by contributions from the Bitcoin community
+- **Open Source**: Transparent and collaborative development
 
-Yes, you can!
+## 📄 License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 🙏 Acknowledgments
+
+- The Bitcoin community for creating amazing educational content
+- All the educators, developers, and contributors who make Bitcoin accessible
+- Open source maintainers whose tools made this project possible
+
+## 📞 Support
+
+- Open an [issue](https://github.com/btclearn/btclearn/issues) for bug reports or feature requests
+- Check the [Contributing Guide](CONTRIBUTING.md) for development questions
+- Join the Bitcoin community discussions linked in our resources
+
+---
+
+**Built with ❤️ for the Bitcoin community**
+
+*Study Bitcoin. Fix the money. Fix the world.*

@@ -4,9 +4,11 @@ import { Search, BookOpen, Mic, Wallet, Users, Globe, Shield, Zap, Server, Star 
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const topRecommendations = [
     { 
@@ -21,6 +23,27 @@ const Index = () => {
       title: "Bull Bitcoin", 
       description: "Canadian Bitcoin exchange and education platform focused on Bitcoin-only services.",
       url: "https://bullbitcoin.com",
+      featured: true
+    },
+    { 
+      id: 'nodeacademy', 
+      title: "Node Academy", 
+      description: "Comprehensive Bitcoin education platform covering technical and practical aspects.",
+      url: "https://nodeacademy.org",
+      featured: true
+    },
+    { 
+      id: 'btcpayserver', 
+      title: "BTCPay Server", 
+      description: "Self-hosted Bitcoin payment processor for merchants and individuals.",
+      url: "https://btcpayserver.org",
+      featured: true
+    },
+    { 
+      id: 'zeus', 
+      title: "Zeus", 
+      description: "Mobile app for managing Lightning Network nodes with advanced features.",
+      url: "https://zeusln.app",
       featured: true
     }
   ];
@@ -73,6 +96,9 @@ const Index = () => {
     { id: 18, title: "The Bitcoin Matrix", description: "Exploring Bitcoin's cultural significance.", category: "Podcasts", url: "https://thebitcoinmatrix.com/", icon: Mic },
     { id: 19, title: "The Bitcoin Show", description: "Bitcoin news and interviews on YouTube.", category: "Podcasts", url: "https://www.youtube.com/c/thebitcoinshow", icon: Mic },
     { id: 20, title: "The Bitcoin Layer", description: "Bitcoin's role in global finance.", category: "Podcasts", url: "https://thebitcoinlayer.com/", icon: Mic },
+    { id: 61, title: "TFTC", description: "Marty Bent's podcast covering Bitcoin and freedom technology.", category: "Podcasts", url: "https://tftc.io/", icon: Mic },
+    { id: 62, title: "What Bitcoin Did", description: "Peter McCormack's podcast exploring Bitcoin and its implications.", category: "Podcasts", url: "https://www.whatbitcoindid.com/", icon: Mic },
+    { id: 63, title: "The Jack Mallers Show", description: "Jack Mallers discusses Bitcoin adoption and Lightning Network.", category: "Podcasts", url: "https://www.youtube.com/@JackMallers", icon: Mic },
 
     // Wallets and Payment Services
     { id: 21, title: "COLDCARD User Guide", description: "Coinkite's guide for its secure hardware wallet.", category: "Wallets", url: "https://coldcard.com/docs/", icon: Wallet },
@@ -138,11 +164,15 @@ const Index = () => {
   ];
 
   const allResources = [...resources, ...diyTutorials];
-  const filteredResources = allResources.filter(resource =>
-    resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    resource.category.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredResources = allResources.filter(resource => {
+    const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      resource.category.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const matchesCategory = selectedCategory === null || resource.category === selectedCategory;
+    
+    return matchesSearch && matchesCategory;
+  });
 
   const getIconForCategory = (category: string) => {
     const categoryData = categories.find(c => c.name === category);
@@ -152,6 +182,10 @@ const Index = () => {
   const getColorForCategory = (category: string) => {
     const categoryData = categories.find(c => c.name === category);
     return categoryData ? categoryData.color : "bg-gray-100 text-gray-700";
+  };
+
+  const handleCategoryFilter = (categoryName: string) => {
+    setSelectedCategory(selectedCategory === categoryName ? null : categoryName);
   };
 
   return (
@@ -181,7 +215,7 @@ const Index = () => {
           <p className="text-gray-600 mb-6">Our most recommended Bitcoin resources to get started</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {topRecommendations.map((recommendation) => (
             <Card key={recommendation.id} className="border-2 border-orange-200 hover:shadow-xl transition-all duration-200 hover:-translate-y-1 bg-gradient-to-br from-orange-50 to-amber-50">
               <CardHeader className="pb-3">
@@ -230,7 +264,7 @@ const Index = () => {
           </p>
           
           {/* Search Bar */}
-          <div className="max-w-md mx-auto relative">
+          <div className="max-w-md mx-auto relative mb-6">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
             <Input
               type="text"
@@ -240,14 +274,35 @@ const Index = () => {
               className="pl-10 py-3 text-lg border-orange-200 focus:border-orange-400 focus:ring-orange-400"
             />
           </div>
+
+          {/* Clear filters button */}
+          {(selectedCategory || searchTerm) && (
+            <Button 
+              variant="outline" 
+              onClick={() => {
+                setSelectedCategory(null);
+                setSearchTerm('');
+              }}
+              className="mb-6"
+            >
+              Clear Filters
+            </Button>
+          )}
         </div>
 
         {/* Categories Overview */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
           {categories.map((category) => {
             const IconComponent = category.icon;
+            const isSelected = selectedCategory === category.name;
             return (
-              <Card key={category.name} className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+              <Card 
+                key={category.name} 
+                className={`text-center hover:shadow-lg transition-all cursor-pointer ${
+                  isSelected ? 'ring-2 ring-orange-500 bg-orange-50' : ''
+                }`}
+                onClick={() => handleCategoryFilter(category.name)}
+              >
                 <CardContent className="p-6">
                   <IconComponent className="h-8 w-8 mx-auto mb-2 text-orange-500" />
                   <h3 className="font-semibold text-gray-900 mb-1">{category.name}</h3>
@@ -306,7 +361,7 @@ const Index = () => {
 
         {filteredResources.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No resources found matching your search.</p>
+            <p className="text-gray-500 text-lg">No resources found matching your search or filter.</p>
           </div>
         )}
       </section>
@@ -364,8 +419,19 @@ const Index = () => {
             <p className="text-gray-600 mb-2">
               Built with ❤️ for the Bitcoin community
             </p>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 mb-2">
               All resources are Bitcoin-only and focused on education, privacy, and sovereignty
+            </p>
+            <p className="text-sm text-gray-500">
+              Open source project under MIT License - 
+              <a 
+                href="https://github.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-orange-600 hover:text-orange-700 ml-1"
+              >
+                Contribute on GitHub
+              </a>
             </p>
           </div>
         </div>
