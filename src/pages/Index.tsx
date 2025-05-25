@@ -424,7 +424,7 @@ const Index = () => {
             <p className="text-sm text-gray-500">
               Open source project under MIT License - 
               <a 
-                href="https://github.com/btclearn/btclearn" 
+                href="https://github.com/jpgaviria2/btclearn" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-orange-600 hover:text-orange-700 ml-1"

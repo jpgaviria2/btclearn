@@ -8,7 +8,7 @@ A comprehensive, curated collection of Bitcoin-only resources for education, dev
 
 ## 🚀 Live Site
 
-Visit [BTCLearn](https://btclearn.github.io/btclearn) to explore the resource hub.
+Visit [BTCLearn](https://jpgaviria2.github.io/btclearn) to explore the resource hub.
 
 ## 🎯 Features
 
@@ -66,7 +66,7 @@ This project is automatically deployed to GitHub Pages using GitHub Actions. The
 
 1. Triggers on pushes to the `main` branch
 2. Builds the React application
-3. Deploys to GitHub Pages at `https://btclearn.github.io/btclearn/`
+3. Deploys to GitHub Pages at `https://jpgaviria2.github.io/btclearn/`
 
 To set up GitHub Pages for your fork:
 
@@ -117,7 +117,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- Open an [issue](https://github.com/btclearn/btclearn/issues) for bug reports or feature requests
+- Open an [issue](https://github.com/jpgaviria2/btclearn/issues) for bug reports or feature requests
 - Check the [Contributing Guide](CONTRIBUTING.md) for development questions
 - Join the Bitcoin community discussions linked in our resources
 
