@@ -1,12 +1,222 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import { Search, BookOpen, Mic, Wallet, Users, Globe, Shield } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const Index = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const resources = [
+    // Educational Resources
+    { id: 1, title: "Bitcoin Wiki", description: "A detailed, community-maintained encyclopedia on Bitcoin's technical and practical aspects.", category: "Education", url: "https://en.bitcoin.it/wiki/Main_Page", icon: BookOpen },
+    { id: 2, title: "Bitcoin Developer Documentation", description: "Official guides for developers working with Bitcoin's protocol.", category: "Education", url: "https://developer.bitcoin.org/", icon: BookOpen },
+    { id: 3, title: "Bitcoin Optech", description: "Technical education for Bitcoin developers, including newsletters and workshops.", category: "Education", url: "https://bitcoinops.org/", icon: BookOpen },
+    { id: 4, title: "Chaincode Labs", description: "Bitcoin-focused seminars and resources for coders and enthusiasts.", category: "Education", url: "https://chaincode.com/", icon: BookOpen },
+    { id: 5, title: "Bitcoin Magazine", description: "Articles and guides on Bitcoin's history, technology, and adoption.", category: "Education", url: "https://bitcoinmagazine.com/", icon: BookOpen },
+    { id: 6, title: "The Bitcoin Standard", description: "Saifedean Ammous' book exploring Bitcoin's economic significance.", category: "Education", url: "https://saifedean.com/thebitcoinstandard/", icon: BookOpen },
+    { id: 7, title: "Programming Bitcoin", description: "Jimmy Song's resource for learning Bitcoin programming.", category: "Education", url: "https://programmingbitcoin.com/", icon: BookOpen },
+    { id: 8, title: "Andreas M. Antonopoulos", description: "Videos and books by a prominent Bitcoin educator.", category: "Education", url: "https://aantonop.com/", icon: BookOpen },
+    { id: 9, title: "Bitcoin Whitepaper", description: "Satoshi Nakamoto's foundational document.", category: "Education", url: "https://bitcoin.org/bitcoin.pdf", icon: BookOpen },
+    { id: 10, title: "Bitcoin Core Documentation", description: "Official docs for Bitcoin Core, the primary Bitcoin software.", category: "Education", url: "https://bitcoincore.org/en/doc/", icon: BookOpen },
+
+    // Podcasts
+    { id: 11, title: "Citadel Dispatch", description: "Odell's podcast on Bitcoin privacy and sovereignty.", category: "Podcasts", url: "https://citadeldispatch.com/", icon: Mic },
+    { id: 12, title: "The Bitcoin Knowledge Podcast", description: "Interviews with Bitcoin thought leaders.", category: "Podcasts", url: "https://www.bitcoin.kn/", icon: Mic },
+    { id: 13, title: "Stephan Livera Podcast", description: "Deep dives into Bitcoin and Austrian economics.", category: "Podcasts", url: "https://stephanlivera.com/", icon: Mic },
+    { id: 14, title: "Bitcoin Audible", description: "Guy Swann narrates Bitcoin essays and articles.", category: "Podcasts", url: "https://bitcoinaudible.com/", icon: Mic },
+    { id: 15, title: "The Bitcoin Standard Podcast", description: "Saifedean Ammous discusses Bitcoin's economic impact.", category: "Podcasts", url: "https://saifedean.com/podcast/", icon: Mic },
+    { id: 16, title: "The Progressive Bitcoiner", description: "Bitcoin's social and political dimensions.", category: "Podcasts", url: "https://progressivebitcoiner.com/", icon: Mic },
+    { id: 17, title: "Bitcoin Rapid-Fire", description: "John Vallis hosts long-form Bitcoin talks.", category: "Podcasts", url: "https://bitcoinrapidfire.com/", icon: Mic },
+    { id: 18, title: "The Bitcoin Matrix", description: "Exploring Bitcoin's cultural significance.", category: "Podcasts", url: "https://thebitcoinmatrix.com/", icon: Mic },
+    { id: 19, title: "The Bitcoin Show", description: "Bitcoin news and interviews on YouTube.", category: "Podcasts", url: "https://www.youtube.com/c/thebitcoinshow", icon: Mic },
+    { id: 20, title: "The Bitcoin Layer", description: "Bitcoin's role in global finance.", category: "Podcasts", url: "https://thebitcoinlayer.com/", icon: Mic },
+
+    // Wallets and Cold Storage
+    { id: 21, title: "COLDCARD User Guide", description: "Coinkite's guide for its secure hardware wallet.", category: "Wallets", url: "https://coldcard.com/docs/", icon: Wallet },
+    { id: 22, title: "OPENDIME User Guide", description: "Instructions for Coinkite's Bitcoin 'stick' product.", category: "Wallets", url: "https://opendime.com/", icon: Wallet },
+    { id: 23, title: "Bitcoin Wallet Comparison", description: "Reviews of Bitcoin wallet options.", category: "Wallets", url: "https://bitcoin.org/en/choose-your-wallet", icon: Wallet },
+    { id: 24, title: "Bitcoin.org Wallet Guide", description: "Tips for selecting a secure Bitcoin wallet.", category: "Wallets", url: "https://bitcoin.org/en/secure-your-wallet", icon: Wallet },
+    { id: 25, title: "Casa", description: "Multisig wallet service for Bitcoin security.", category: "Wallets", url: "https://keys.casa/", icon: Wallet },
+    { id: 26, title: "Specter Wallet", description: "Open-source multisig wallet for advanced users.", category: "Wallets", url: "https://specter.solutions/", icon: Wallet },
+    { id: 27, title: "Blue Wallet", description: "Mobile wallet with Lightning Network support.", category: "Wallets", url: "https://bluewallet.io/", icon: Wallet },
+    { id: 28, title: "Wasabi Wallet", description: "Privacy-focused wallet with CoinJoin.", category: "Wallets", url: "https://wasabiwallet.io/", icon: Wallet },
+    { id: 29, title: "Samourai Wallet", description: "Android wallet emphasizing privacy.", category: "Wallets", url: "https://samouraiwallet.com/", icon: Wallet },
+    { id: 30, title: "Electrum", description: "Lightweight wallet with robust features.", category: "Wallets", url: "https://electrum.org/", icon: Wallet },
+
+    // Specific Entities and Individuals
+    { id: 31, title: "Mi Primer Bitcoin Diploma", description: "Details on Mi Primer Bitcoin's education program.", category: "Community", url: "https://www.miprimer.bitcoin/", icon: Users },
+    { id: 32, title: "Rabbit Hole Recap Archives", description: "Odell and Marty Bent's podcast archive.", category: "Community", url: "https://rabbitholerecp.com/", icon: Users },
+    { id: 33, title: "Coinkite Blog", description: "News and tips from Coinkite.", category: "Community", url: "https://blog.coinkite.com/", icon: Users },
+    { id: 34, title: "Nakamoto Institute Research", description: "Bitcoin and cryptography papers.", category: "Community", url: "https://nakamotoinstitute.org/", icon: Users },
+    { id: 35, title: "Odell's Newsletter", description: "Bitcoin privacy insights from Odell.", category: "Community", url: "https://odell.medium.com/", icon: Users },
+    { id: 36, title: "Preston Pysh's We Study Billionaires", description: "Bitcoin investment discussions.", category: "Community", url: "https://www.theinvestorspodcast.com/bitcoin-fundamentals/", icon: Users },
+    { id: 37, title: "Marty Bent's TFTC", description: "Bitcoin content from Marty Bent.", category: "Community", url: "https://tftc.io/", icon: Users },
+    { id: 38, title: "Jack Mallers' Strike", description: "Bitcoin payment platform by Jack Mallers.", category: "Community", url: "https://strike.me/", icon: Users },
+    { id: 39, title: "Bitcoin Policy Institute", description: "Policy research co-founded by Odell.", category: "Community", url: "https://www.bitcoinpolicy.org/", icon: Users },
+    { id: 40, title: "Ten31", description: "Bitcoin VC firm co-founded by Marty Bent.", category: "Community", url: "https://ten31.vc/", icon: Users },
+
+    // Additional Resources
+    { id: 41, title: "Bitcoin Core", description: "Official site for Bitcoin Core software.", category: "Tools", url: "https://bitcoincore.org/", icon: Globe },
+    { id: 42, title: "Bitcoin Stack Exchange", description: "Bitcoin Q&A community.", category: "Community", url: "https://bitcoin.stackexchange.com/", icon: Users },
+    { id: 43, title: "BitcoinTalk", description: "Satoshi's original Bitcoin forum.", category: "Community", url: "https://bitcointalk.org/", icon: Users },
+    { id: 44, title: "Bitcoin Reddit", description: "Active Bitcoin discussion subreddit.", category: "Community", url: "https://www.reddit.com/r/Bitcoin/", icon: Users },
+    { id: 45, title: "Bitcoin Meetups", description: "Find local Bitcoin groups.", category: "Community", url: "https://bitcoin.meetup.com/", icon: Users },
+    { id: 46, title: "Bitcoin Conferences", description: "Upcoming Bitcoin events.", category: "Community", url: "https://bitcoinmagazine.com/events", icon: Users },
+    { id: 47, title: "Bitcoin Books", description: "Jameson Lopp's curated book list.", category: "Education", url: "https://www.lopp.net/bitcoin-information/books.html", icon: BookOpen },
+    { id: 48, title: "Bitcoin Videos", description: "Educational Bitcoin video collection.", category: "Education", url: "https://www.lopp.net/bitcoin-information/videos.html", icon: BookOpen },
+    { id: 49, title: "Bitcoin Privacy Guide", description: "Privacy best practices.", category: "Security", url: "https://bitcoiner.guide/privacy/", icon: Shield },
+    { id: 50, title: "Bitcoin Security Guide", description: "Security tips for Bitcoin users.", category: "Security", url: "https://bitcoiner.guide/security/", icon: Shield }
+  ];
+
+  const categories = [
+    { name: "Education", icon: BookOpen, color: "bg-orange-100 text-orange-700", count: resources.filter(r => r.category === "Education").length },
+    { name: "Podcasts", icon: Mic, color: "bg-blue-100 text-blue-700", count: resources.filter(r => r.category === "Podcasts").length },
+    { name: "Wallets", icon: Wallet, color: "bg-green-100 text-green-700", count: resources.filter(r => r.category === "Wallets").length },
+    { name: "Community", icon: Users, color: "bg-purple-100 text-purple-700", count: resources.filter(r => r.category === "Community").length },
+    { name: "Tools", icon: Globe, color: "bg-indigo-100 text-indigo-700", count: resources.filter(r => r.category === "Tools").length },
+    { name: "Security", icon: Shield, color: "bg-red-100 text-red-700", count: resources.filter(r => r.category === "Security").length }
+  ];
+
+  const filteredResources = resources.filter(resource =>
+    resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    resource.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const getIconForCategory = (category: string) => {
+    const categoryData = categories.find(c => c.name === category);
+    return categoryData ? categoryData.icon : Globe;
+  };
+
+  const getColorForCategory = (category: string) => {
+    const categoryData = categories.find(c => c.name === category);
+    return categoryData ? categoryData.color : "bg-gray-100 text-gray-700";
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-orange-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+              BTC<span className="text-orange-500">Learn</span>
+            </h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Your comprehensive hub for Bitcoin-only resources, education, and tools
+            </p>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Discover the Best Bitcoin Resources
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Curated collection of 50+ Bitcoin-only resources covering education, podcasts, wallets, 
+            cold storage, and community insights from leading Bitcoin educators and developers.
+          </p>
+          
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
+            <Input
+              type="text"
+              placeholder="Search resources..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 py-3 text-lg border-orange-200 focus:border-orange-400 focus:ring-orange-400"
+            />
+          </div>
+        </div>
+
+        {/* Categories Overview */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          {categories.map((category) => {
+            const IconComponent = category.icon;
+            return (
+              <Card key={category.name} className="text-center hover:shadow-lg transition-shadow cursor-pointer">
+                <CardContent className="p-6">
+                  <IconComponent className="h-8 w-8 mx-auto mb-2 text-orange-500" />
+                  <h3 className="font-semibold text-gray-900 mb-1">{category.name}</h3>
+                  <Badge variant="secondary" className={category.color}>
+                    {category.count} resources
+                  </Badge>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Resources Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredResources.map((resource) => {
+            const IconComponent = getIconForCategory(resource.category);
+            return (
+              <Card key={resource.id} className="hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-center space-x-2">
+                      <IconComponent className="h-5 w-5 text-orange-500" />
+                      <Badge variant="secondary" className={getColorForCategory(resource.category)}>
+                        {resource.category}
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardTitle className="text-lg leading-tight">
+                    <a 
+                      href={resource.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="hover:text-orange-600 transition-colors"
+                    >
+                      {resource.title}
+                    </a>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm text-gray-600 mb-4">
+                    {resource.description}
+                  </CardDescription>
+                  <a 
+                    href={resource.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium text-sm transition-colors"
+                  >
+                    Visit Resource →
+                  </a>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {filteredResources.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500 text-lg">No resources found matching your search.</p>
+          </div>
+        )}
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-orange-200 mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <p className="text-gray-600 mb-2">
+              Built with ❤️ for the Bitcoin community
+            </p>
+            <p className="text-sm text-gray-500">
+              All resources are Bitcoin-only and focused on education, privacy, and sovereignty
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
