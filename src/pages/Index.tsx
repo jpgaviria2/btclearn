@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Search, BookOpen, Mic, Wallet, Users, Globe, Shield, Zap, Server, Star } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -204,15 +203,15 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Top Recommendations Section */}
+      {/* Personal Recommended Resources Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
             <Star className="h-6 w-6 text-orange-500 mr-2" />
-            <h2 className="text-2xl font-bold text-gray-900">Top Recommendations</h2>
+            <h2 className="text-2xl font-bold text-gray-900">Personal Recommended Resources</h2>
             <Star className="h-6 w-6 text-orange-500 ml-2" />
           </div>
-          <p className="text-gray-600 mb-6">Our most recommended Bitcoin resources to get started</p>
+          <p className="text-gray-600 mb-6">Our personally recommended Bitcoin resources to get started</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -425,7 +424,7 @@ const Index = () => {
             <p className="text-sm text-gray-500">
               Open source project under MIT License - 
               <a 
-                href="https://github.com" 
+                href="https://github.com/btclearn/btclearn" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-orange-600 hover:text-orange-700 ml-1"

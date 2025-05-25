@@ -8,14 +8,14 @@ A comprehensive, curated collection of Bitcoin-only resources for education, dev
 
 ## 🚀 Live Site
 
-Visit [BTCLearn](https://btclearn.lovable.app) to explore the resource hub.
+Visit [BTCLearn](https://btclearn.github.io/btclearn) to explore the resource hub.
 
 ## 🎯 Features
 
 - **60+ Curated Resources**: Carefully selected Bitcoin-only content
 - **Organized Categories**: Education, Podcasts, Wallets, Merchants, Nodes, Community, Tools, Security, and Tutorials
 - **Search & Filter**: Find exactly what you're looking for
-- **Top Recommendations**: Featured resources for getting started
+- **Personal Recommendations**: Featured resources for getting started
 - **Mobile Responsive**: Works perfectly on all devices
 - **Open Source**: Community-driven and transparent
 
@@ -58,7 +58,22 @@ Visit [BTCLearn](https://btclearn.lovable.app) to explore the resource hub.
 - **UI Components**: shadcn/ui
 - **Build Tool**: Vite
 - **Icons**: Lucide React
-- **Deployment**: Lovable Platform
+- **Deployment**: GitHub Pages
+
+## 🚀 Deployment
+
+This project is automatically deployed to GitHub Pages using GitHub Actions. The deployment workflow:
+
+1. Triggers on pushes to the `main` branch
+2. Builds the React application
+3. Deploys to GitHub Pages at `https://btclearn.github.io/btclearn/`
+
+To set up GitHub Pages for your fork:
+
+1. Go to your repository settings
+2. Navigate to "Pages" in the sidebar
+3. Select "GitHub Actions" as the source
+4. The site will be available at `https://yourusername.github.io/btclearn/`
 
 ## 🤝 Contributing
 
