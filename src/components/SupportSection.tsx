@@ -27,7 +27,7 @@ const SupportSection = () => {
       event.preventDefault();
       const target = event.target as HTMLInputElement;
       const root = target.closest('.btcpay-form') as HTMLFormElement;
-      const price = parseInt(target.dataset.price || '21');
+      const price = parseInt(target.dataset.price || '1');
       if (isNaN(parseInt(target.value))) {
         const priceInput = root.querySelector('.btcpay-input-price') as HTMLInputElement;
         priceInput.value = price.toString();
@@ -119,7 +119,7 @@ const SupportSection = () => {
                     type="button" 
                     data-type="-" 
                     data-step="10" 
-                    data-min="21" 
+                    data-min="1" 
                     data-max="100000000"
                   >
                     -
@@ -128,11 +128,11 @@ const SupportSection = () => {
                     className="btcpay-input-price" 
                     type="number" 
                     name="price" 
-                    min="21" 
+                    min="1" 
                     max="100000000" 
                     step="10" 
-                    defaultValue="21" 
-                    data-price="21" 
+                    defaultValue="1" 
+                    data-price="1" 
                     style={{width: '3em'}} 
                   />
                   <button 
@@ -140,7 +140,7 @@ const SupportSection = () => {
                     type="button" 
                     data-type="+" 
                     data-step="10" 
-                    data-min="21" 
+                    data-min="1" 
                     data-max="100000000"
                   >
                     +
