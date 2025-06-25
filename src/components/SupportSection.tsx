@@ -118,7 +118,7 @@ const SupportSection = () => {
                     className="plus-minus" 
                     type="button" 
                     data-type="-" 
-                    data-step="10" 
+                    data-step="1" 
                     data-min="1" 
                     data-max="100000000"
                   >
@@ -130,7 +130,7 @@ const SupportSection = () => {
                     name="price" 
                     min="1" 
                     max="100000000" 
-                    step="10" 
+                    step="1" 
                     defaultValue="1" 
                     data-price="1" 
                     style={{width: '3em'}} 
@@ -139,7 +139,7 @@ const SupportSection = () => {
                     className="plus-minus" 
                     type="button" 
                     data-type="+" 
-                    data-step="10" 
+                    data-step="1" 
                     data-min="1" 
                     data-max="100000000"
                   >
