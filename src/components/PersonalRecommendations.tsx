@@ -77,14 +77,26 @@ const PersonalRecommendations = () => {
               <CardDescription className="text-sm text-gray-700 mb-4">
                 {recommendation.description}
               </CardDescription>
-              <a 
-                href={recommendation.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium text-sm transition-colors"
-              >
-                Visit Resource →
-              </a>
+              <div className="space-y-2">
+                <a 
+                  href={recommendation.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium text-sm transition-colors block"
+                >
+                  Visit Resource →
+                </a>
+                {recommendation.id === 'btcpayserver' && (
+                  <a 
+                    href="https://merchant.btclearn.org/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors block"
+                  >
+                    Try BTCPay for free →
+                  </a>
+                )}
+              </div>
             </CardContent>
           </Card>
         ))}
