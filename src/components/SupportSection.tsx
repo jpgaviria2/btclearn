@@ -5,40 +5,35 @@ import { Heart } from 'lucide-react';
 const SupportSection = () => {
   // BTCPay form functionality
   useEffect(() => {
-    const handleSliderChange = (event: Event) => {
+    const handlePlusMinus = (event: Event) => {
       event.preventDefault();
-      const target = event.target as HTMLInputElement;
+      const target = event.target as HTMLButtonElement;
       const root = target.closest('.btcpay-form') as HTMLFormElement;
       const el = root.querySelector('.btcpay-input-price') as HTMLInputElement;
-      const price = parseInt(el.value);
-      const min = parseInt(target.getAttribute('min') || '1');
-      const max = parseInt(target.getAttribute('max') || '20');
-      if (price < min) { 
-        el.value = min.toString();
-      } else if (price > max) {
-        el.value = max.toString();
-      } 
-      const rangeInput = root.querySelector('.btcpay-input-range') as HTMLInputElement;
-      rangeInput.value = el.value;
-    };
-
-    const handleSliderInput = (event: Event) => {
-      const target = event.target as HTMLInputElement;
-      const root = target.closest('.btcpay-form') as HTMLFormElement;
-      const priceInput = root.querySelector('.btcpay-input-price') as HTMLInputElement;
-      priceInput.value = target.value;
+      const step = parseInt(target.dataset.step || '1');
+      const min = parseInt(target.dataset.min || '1');
+      const max = parseInt(target.dataset.max || '100000000');
+      const type = target.dataset.type;
+      const price = parseInt(el.value) || min;
+      
+      if (type === '-') {
+        el.value = (price - step < min ? min : price - step).toString();
+      } else if (type === '+') {
+        el.value = (price + step > max ? max : price + step).toString();
+      }
     };
 
     const handlePriceInput = (event: Event) => {
       event.preventDefault();
       const target = event.target as HTMLInputElement;
       const root = target.closest('.btcpay-form') as HTMLFormElement;
-      const price = parseInt(target.dataset.price || '1');
+      const price = parseInt(target.dataset.price || '21');
       if (isNaN(parseInt(target.value))) {
-        target.value = price.toString();
+        const priceInput = root.querySelector('.btcpay-input-price') as HTMLInputElement;
+        priceInput.value = price.toString();
       }
       const min = parseInt(target.getAttribute('min') || '1');
-      const max = parseInt(target.getAttribute('max') || '20');
+      const max = parseInt(target.getAttribute('max') || '100000000');
       if (parseInt(target.value) < min) {
         target.value = min.toString();
       } else if (parseInt(target.value) > max) { 
@@ -46,19 +41,19 @@ const SupportSection = () => {
       }
     };
 
-    // Add event listeners
-    document.querySelectorAll(".btcpay-form .btcpay-input-range").forEach((el) => {
-      const element = el as HTMLInputElement;
+    // Add event listeners for plus/minus buttons
+    document.querySelectorAll(".btcpay-form .plus-minus").forEach((el) => {
+      const element = el as HTMLButtonElement;
       if (!element.dataset.initialized) {
-        element.addEventListener('input', handleSliderInput);
+        element.addEventListener('click', handlePlusMinus);
         element.dataset.initialized = 'true';
       }
     });
 
+    // Add event listeners for price input
     document.querySelectorAll(".btcpay-form .btcpay-input-price").forEach((el) => {
       const element = el as HTMLInputElement;
       if (!element.dataset.initialized) {
-        element.addEventListener('change', handleSliderChange);
         element.addEventListener('input', handlePriceInput);
         element.dataset.initialized = 'true';
       }
@@ -66,15 +61,14 @@ const SupportSection = () => {
 
     // Cleanup function
     return () => {
-      document.querySelectorAll(".btcpay-form .btcpay-input-range").forEach((el) => {
-        const element = el as HTMLInputElement;
-        element.removeEventListener('input', handleSliderInput);
+      document.querySelectorAll(".btcpay-form .plus-minus").forEach((el) => {
+        const element = el as HTMLButtonElement;
+        element.removeEventListener('click', handlePlusMinus);
         element.dataset.initialized = '';
       });
 
       document.querySelectorAll(".btcpay-form .btcpay-input-price").forEach((el) => {
         const element = el as HTMLInputElement;
-        element.removeEventListener('change', handleSliderChange);
         element.removeEventListener('input', handlePriceInput);
         element.dataset.initialized = '';
       });
@@ -113,36 +107,45 @@ const SupportSection = () => {
                 .btcpay-form option { color: #000; background: rgba(0,0,0,.1); }
                 .btcpay-input-price { -moz-appearance: textfield; border: none; box-shadow: none; text-align: center; font-size: 25px; margin: auto; border-radius: 5px; line-height: 35px; background: #fff; }
                 .btcpay-input-price::-webkit-outer-spin-button, .btcpay-input-price::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-                input[type=range].btcpay-input-range { -webkit-appearance:none; width:100%; background: transparent; }
-                input[type=range].btcpay-input-range:focus { outline:0; }
-                input[type=range].btcpay-input-range::-webkit-slider-runnable-track { width:100%; height:3.1px; cursor:pointer; box-shadow:0 0 1.7px #020,0 0 0 #003c00; background:#f3f3f3; border-radius:1px; border:0; }
-                input[type=range].btcpay-input-range::-webkit-slider-thumb { box-shadow:none; border:2.5px solid #cedc21; height:22px; width:22px; border-radius:50%; background:#0f3723; cursor:pointer; -webkit-appearance:none; margin-top:-9.45px }
-                input[type=range].btcpay-input-range:focus::-webkit-slider-runnable-track { background:#fff; }
-                input[type=range].btcpay-input-range::-moz-range-track { width:100%; height:3.1px; cursor:pointer; box-shadow:0 0 1.7px #020,0 0 0 #003c00; background:#f3f3f3; border-radius:1px; border:0; }
-                input[type=range].btcpay-input-range::-moz-range-thumb { box-shadow:none; border:2.5px solid #cedc21; height:22px; width:22px; border-radius:50%; background:#0f3723; cursor:pointer; }
-                input[type=range].btcpay-input-range::-ms-track { width:100%; height:3.1px; cursor:pointer; background:0 0; border-color:transparent; color:transparent; }
-                input[type=range].btcpay-input-range::-ms-fill-lower { background:#e6e6e6; border:0; border-radius:2px; box-shadow:0 0 1.7px #020,0 0 0 #003c00; }
-                input[type=range].btcpay-input-range::-ms-fill-upper { background:#f3f3f3; border:0; border-radius:2px; box-shadow:0 0 1.7px #020,0 0 0 #003c00; }
-                input[type=range].btcpay-input-range::-ms-thumb { box-shadow:none; border:2.5px solid #cedc21; height:22px; width:22px; border-radius:50%; background:#0f3723; cursor:pointer; height:3.1px; }
-                input[type=range].btcpay-input-range:focus::-ms-fill-lower { background:#f3f3f3; }
-                input[type=range].btcpay-input-range:focus::-ms-fill-upper { background:#fff; }
               `
             }} />
             
             <form method="POST" action="https://merchant.btclearn.org/api/v1/invoices" className="btcpay-form btcpay-form--block">
               <input type="hidden" name="storeId" value="3Vh6xiQCc6yvKJc1wYriC14uPQH3d92xKzE6arHD1UJM" />
               <div className="btcpay-custom-container">
-                <input 
-                  className="btcpay-input-price" 
-                  type="number" 
-                  name="price" 
-                  min="1" 
-                  max="20" 
-                  step="1" 
-                  defaultValue="1" 
-                  data-price="1" 
-                  style={{width: '209px'}} 
-                />
+                <div className="btcpay-custom">
+                  <button 
+                    className="plus-minus" 
+                    type="button" 
+                    data-type="-" 
+                    data-step="10" 
+                    data-min="21" 
+                    data-max="100000000"
+                  >
+                    -
+                  </button>
+                  <input 
+                    className="btcpay-input-price" 
+                    type="number" 
+                    name="price" 
+                    min="21" 
+                    max="100000000" 
+                    step="10" 
+                    defaultValue="21" 
+                    data-price="21" 
+                    style={{width: '3em'}} 
+                  />
+                  <button 
+                    className="plus-minus" 
+                    type="button" 
+                    data-type="+" 
+                    data-step="10" 
+                    data-min="21" 
+                    data-max="100000000"
+                  >
+                    +
+                  </button>
+                </div>
                 <select name="currency" defaultValue="SATS">
                   <option value="SATS">SATS</option>
                   <option value="USD">USD</option>
@@ -150,15 +153,6 @@ const SupportSection = () => {
                   <option value="EUR">EUR</option>
                   <option value="BTC">BTC</option>
                 </select>
-                <input 
-                  type="range" 
-                  className="btcpay-input-range" 
-                  min="1" 
-                  max="20" 
-                  step="1" 
-                  defaultValue="1" 
-                  style={{width: '209px', marginBottom: '15px'}} 
-                />
               </div>
               <input 
                 type="image" 
