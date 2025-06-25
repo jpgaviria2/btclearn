@@ -143,8 +143,8 @@ const SupportSection = () => {
                   data-price="1" 
                   style={{width: '209px'}} 
                 />
-                <select name="currency">
-                  <option value="SATS" selected>SATS</option>
+                <select name="currency" defaultValue="SATS">
+                  <option value="SATS">SATS</option>
                   <option value="USD">USD</option>
                   <option value="GBP">GBP</option>
                   <option value="EUR">EUR</option>
