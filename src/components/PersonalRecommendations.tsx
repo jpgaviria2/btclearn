@@ -43,8 +43,8 @@ const PersonalRecommendations = () => {
     },
     { 
       id: 'rabbithole', 
-      title: "Rabbit Hole Recap Archives", 
-      description: "Odell and Marty Bent's podcast archive with deep Bitcoin discussions.",
+      title: "Rabbit Hole Recap", 
+      description: "Marty Bent and Matt Odell's podcast with deep Bitcoin discussions.",
       url: "https://rhr.tv/stream",
       featured: true
     },
