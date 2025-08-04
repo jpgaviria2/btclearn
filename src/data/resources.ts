@@ -22,13 +22,13 @@ export const resourcesData = {
     { id: 14, title: "Bitcoin Audible", description: "Guy Swann narrates Bitcoin essays and articles.", category: "Podcasts", url: "https://bitcoinaudible.com/", icon: Mic },
     { id: 15, title: "The Bitcoin Standard Podcast", description: "Saifedean Ammous discusses Bitcoin's economic impact.", category: "Podcasts", url: "https://saifedean.com/podcast/", icon: Mic },
     { id: 16, title: "The Progressive Bitcoiner", description: "Bitcoin's social and political dimensions.", category: "Podcasts", url: "https://progressivebitcoiner.com/", icon: Mic },
-    { id: 17, title: "Bitcoin Rapid-Fire", description: "John Vallis hosts long-form Bitcoin talks.", category: "Podcasts", url: "https://bitcoinrapidfire.com/", icon: Mic },
+    { id: 17, title: "Bitcoin Rapid-Fire", description: "John Vallis hosts long-form Bitcoin talks.", category: "Podcasts", url: "https://www.youtube.com/c/JohnVallisBitcoinRapidFire", icon: Mic },
     { id: 18, title: "The Bitcoin Matrix", description: "Exploring Bitcoin's cultural significance.", category: "Podcasts", url: "https://thebitcoinmatrix.com/", icon: Mic },
-    { id: 19, title: "The Bitcoin Show", description: "Bitcoin news and interviews on YouTube.", category: "Podcasts", url: "https://www.youtube.com/c/thebitcoinshow", icon: Mic },
+    { id: 19, title: "The Bitcoin Show", description: "THE Bitcoin Podcast with Walker - news, education, interviews, and commentary.", category: "Podcasts", url: "https://bitcoinpodcast.net/", icon: Mic },
     { id: 20, title: "The Bitcoin Layer", description: "Bitcoin's role in global finance.", category: "Podcasts", url: "https://thebitcoinlayer.com/", icon: Mic },
     { id: 61, title: "TFTC", description: "Marty Bent's podcast covering Bitcoin and freedom technology.", category: "Podcasts", url: "https://tftc.io/", icon: Mic },
     { id: 62, title: "What Bitcoin Did", description: "Peter McCormack's podcast exploring Bitcoin and its implications.", category: "Podcasts", url: "https://www.whatbitcoindid.com/", icon: Mic },
-    { id: 63, title: "The Jack Mallers Show", description: "Jack Mallers discusses Bitcoin adoption and Lightning Network.", category: "Podcasts", url: "https://www.youtube.com/@JackMallers", icon: Mic },
+    { id: 63, title: "The Jack Mallers Show", description: "Jack Mallers discusses Bitcoin adoption and Lightning Network.", category: "Podcasts", url: "https://www.youtube.com/@thejackmallersshow", icon: Mic },
 
     // Wallets and Payment Services
     { id: 21, title: "COLDCARD User Guide", description: "Coinkite's guide for its secure hardware wallet.", category: "Wallets", url: "https://coldcard.com/docs/", icon: Wallet },
@@ -58,7 +58,7 @@ export const resourcesData = {
 
     // Community Resources
     { id: 41, title: "Mi Primer Bitcoin Diploma", description: "Open source Bitcoin education platform with the world's first Bitcoin Diploma program.", category: "Community", url: "https://myfirstbitcoin.io/", icon: Users },
-    { id: 42, title: "Rabbit Hole Recap Archives", description: "Odell and Marty Bent's podcast archive.", category: "Community", url: "https://rabbitholerecp.com/", icon: Users },
+    { id: 42, title: "Rabbit Hole Recap Archives", description: "Odell and Marty Bent's podcast archive.", category: "Community", url: "https://rhr.tv/stream", icon: Users },
     { id: 43, title: "Coinkite Blog", description: "News and tips from Coinkite.", category: "Community", url: "https://blog.coinkite.com/", icon: Users },
     { id: 44, title: "Nakamoto Institute Research", description: "Bitcoin and cryptography papers.", category: "Community", url: "https://nakamotoinstitute.org/", icon: Users },
     { id: 45, title: "Odell's Newsletter", description: "Bitcoin privacy insights from Odell.", category: "Community", url: "https://odell.medium.com/", icon: Users },
@@ -73,12 +73,12 @@ export const resourcesData = {
     { id: 52, title: "Bitcoin Stack Exchange", description: "Bitcoin Q&A community.", category: "Community", url: "https://bitcoin.stackexchange.com/", icon: Users },
     { id: 53, title: "BitcoinTalk", description: "Satoshi's original Bitcoin forum.", category: "Community", url: "https://bitcointalk.org/", icon: Users },
     { id: 54, title: "Bitcoin Reddit", description: "Active Bitcoin discussion subreddit.", category: "Community", url: "https://www.reddit.com/r/Bitcoin/", icon: Users },
-    { id: 55, title: "Bitcoin Meetups", description: "Find local Bitcoin groups.", category: "Community", url: "https://bitcoin.meetup.com/", icon: Users },
-    { id: 56, title: "Bitcoin Conferences", description: "Upcoming Bitcoin events.", category: "Community", url: "https://bitcoinmagazine.com/events", icon: Users },
-    { id: 57, title: "Bitcoin Books", description: "Jameson Lopp's curated book list.", category: "Education", url: "https://www.lopp.net/bitcoin-information/books.html", icon: BookOpen },
-    { id: 58, title: "Bitcoin Videos", description: "Educational Bitcoin video collection.", category: "Education", url: "https://www.lopp.net/bitcoin-information/videos.html", icon: BookOpen },
-    { id: 59, title: "Bitcoin Privacy Guide", description: "Privacy best practices.", category: "Security", url: "https://bitcoiner.guide/privacy/", icon: Shield },
-    { id: 60, title: "Bitcoin Security Guide", description: "Security tips for Bitcoin users.", category: "Security", url: "https://bitcoiner.guide/security/", icon: Shield }
+
+
+
+    { id: 55, title: "Bitcoin Videos", description: "Educational Bitcoin video collection.", category: "Education", url: "https://www.lopp.net/", icon: BookOpen },
+    { id: 56, title: "Bitcoin Privacy Guide", description: "Privacy best practices.", category: "Security", url: "https://bitcoiner.guide/privacy/", icon: Shield },
+
   ],
 
   diyTutorials: [
