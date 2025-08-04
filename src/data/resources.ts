@@ -57,7 +57,7 @@ export const resourcesData = {
     { id: 40, title: "Raspiblitz", description: "DIY Lightning Network node based on Raspberry Pi.", category: "Nodes", url: "https://raspiblitz.org/", icon: Server },
 
     // Community Resources
-    { id: 41, title: "Mi Primer Bitcoin Diploma", description: "Details on Mi Primer Bitcoin's education program.", category: "Community", url: "https://www.miprimer.bitcoin/", icon: Users },
+    { id: 41, title: "Mi Primer Bitcoin Diploma", description: "Open source Bitcoin education platform with the world's first Bitcoin Diploma program.", category: "Community", url: "https://myfirstbitcoin.io/", icon: Users },
     { id: 42, title: "Rabbit Hole Recap Archives", description: "Odell and Marty Bent's podcast archive.", category: "Community", url: "https://rabbitholerecp.com/", icon: Users },
     { id: 43, title: "Coinkite Blog", description: "News and tips from Coinkite.", category: "Community", url: "https://blog.coinkite.com/", icon: Users },
     { id: 44, title: "Nakamoto Institute Research", description: "Bitcoin and cryptography papers.", category: "Community", url: "https://nakamotoinstitute.org/", icon: Users },
