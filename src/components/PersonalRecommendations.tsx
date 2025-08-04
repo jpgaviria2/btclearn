@@ -40,6 +40,20 @@ const PersonalRecommendations = () => {
       description: "Mobile app for managing Lightning Network nodes with advanced features.",
       url: "https://zeusln.app",
       featured: true
+    },
+    { 
+      id: 'rabbithole', 
+      title: "Rabbit Hole Recap Archives", 
+      description: "Odell and Marty Bent's podcast archive with deep Bitcoin discussions.",
+      url: "https://rhr.tv/stream",
+      featured: true
+    },
+    { 
+      id: 'jackmallers', 
+      title: "The Jack Mallers Show", 
+      description: "Jack Mallers discusses Bitcoin adoption and Lightning Network developments.",
+      url: "https://www.youtube.com/@thejackmallersshow",
+      featured: true
     }
   ];
 

@@ -28,7 +28,7 @@ export const resourcesData = {
     { id: 20, title: "The Bitcoin Layer", description: "Bitcoin's role in global finance.", category: "Podcasts", url: "https://thebitcoinlayer.com/", icon: Mic },
     { id: 61, title: "TFTC", description: "Marty Bent's podcast covering Bitcoin and freedom technology.", category: "Podcasts", url: "https://tftc.io/", icon: Mic },
     { id: 62, title: "What Bitcoin Did", description: "Peter McCormack's podcast exploring Bitcoin and its implications.", category: "Podcasts", url: "https://www.whatbitcoindid.com/", icon: Mic },
-    { id: 63, title: "The Jack Mallers Show", description: "Jack Mallers discusses Bitcoin adoption and Lightning Network.", category: "Podcasts", url: "https://www.youtube.com/@thejackmallersshow", icon: Mic },
+
 
     // Wallets and Payment Services
     { id: 21, title: "COLDCARD User Guide", description: "Coinkite's guide for its secure hardware wallet.", category: "Wallets", url: "https://coldcard.com/docs/", icon: Wallet },
@@ -58,26 +58,26 @@ export const resourcesData = {
 
     // Community Resources
     { id: 41, title: "Mi Primer Bitcoin Diploma", description: "Open source Bitcoin education platform with the world's first Bitcoin Diploma program.", category: "Community", url: "https://myfirstbitcoin.io/", icon: Users },
-    { id: 42, title: "Rabbit Hole Recap Archives", description: "Odell and Marty Bent's podcast archive.", category: "Community", url: "https://rhr.tv/stream", icon: Users },
-    { id: 43, title: "Coinkite Blog", description: "News and tips from Coinkite.", category: "Community", url: "https://blog.coinkite.com/", icon: Users },
-    { id: 44, title: "Nakamoto Institute Research", description: "Bitcoin and cryptography papers.", category: "Community", url: "https://nakamotoinstitute.org/", icon: Users },
-    { id: 45, title: "Odell's Newsletter", description: "Bitcoin privacy insights from Odell.", category: "Community", url: "https://odell.medium.com/", icon: Users },
-    { id: 46, title: "Preston Pysh's We Study Billionaires", description: "Bitcoin investment discussions.", category: "Community", url: "https://www.theinvestorspodcast.com/bitcoin-fundamentals/", icon: Users },
-    { id: 47, title: "Marty Bent's TFTC", description: "Bitcoin content from Marty Bent.", category: "Community", url: "https://tftc.io/", icon: Users },
-    { id: 48, title: "Jack Mallers' Strike", description: "Bitcoin payment platform by Jack Mallers.", category: "Community", url: "https://strike.me/", icon: Users },
-    { id: 49, title: "Bitcoin Policy Institute", description: "Policy research co-founded by Odell.", category: "Community", url: "https://www.bitcoinpolicy.org/", icon: Users },
-    { id: 50, title: "Ten31", description: "Bitcoin VC firm co-founded by Marty Bent.", category: "Community", url: "https://ten31.vc/", icon: Users },
+
+    { id: 42, title: "Coinkite Blog", description: "News and tips from Coinkite.", category: "Community", url: "https://blog.coinkite.com/", icon: Users },
+    { id: 43, title: "Nakamoto Institute Research", description: "Bitcoin and cryptography papers.", category: "Community", url: "https://nakamotoinstitute.org/", icon: Users },
+    { id: 44, title: "Odell's Newsletter", description: "Bitcoin privacy insights from Odell.", category: "Community", url: "https://odell.medium.com/", icon: Users },
+    { id: 45, title: "Preston Pysh's We Study Billionaires", description: "Bitcoin investment discussions.", category: "Community", url: "https://www.theinvestorspodcast.com/bitcoin-fundamentals/", icon: Users },
+    { id: 46, title: "Marty Bent's TFTC", description: "Bitcoin content from Marty Bent.", category: "Community", url: "https://tftc.io/", icon: Users },
+    { id: 47, title: "Jack Mallers' Strike", description: "Bitcoin payment platform by Jack Mallers.", category: "Community", url: "https://strike.me/", icon: Users },
+    { id: 48, title: "Bitcoin Policy Institute", description: "Policy research co-founded by Odell.", category: "Community", url: "https://www.bitcoinpolicy.org/", icon: Users },
+    { id: 49, title: "Ten31", description: "Bitcoin VC firm co-founded by Marty Bent.", category: "Community", url: "https://ten31.vc/", icon: Users },
 
     // Additional Tools & Resources
-    { id: 51, title: "Bitcoin Core", description: "Official site for Bitcoin Core software.", category: "Tools", url: "https://bitcoincore.org/", icon: Globe },
-    { id: 52, title: "Bitcoin Stack Exchange", description: "Bitcoin Q&A community.", category: "Community", url: "https://bitcoin.stackexchange.com/", icon: Users },
-    { id: 53, title: "BitcoinTalk", description: "Satoshi's original Bitcoin forum.", category: "Community", url: "https://bitcointalk.org/", icon: Users },
-    { id: 54, title: "Bitcoin Reddit", description: "Active Bitcoin discussion subreddit.", category: "Community", url: "https://www.reddit.com/r/Bitcoin/", icon: Users },
+    { id: 50, title: "Bitcoin Core", description: "Official site for Bitcoin Core software.", category: "Tools", url: "https://bitcoincore.org/", icon: Globe },
+    { id: 51, title: "Bitcoin Stack Exchange", description: "Bitcoin Q&A community.", category: "Community", url: "https://bitcoin.stackexchange.com/", icon: Users },
+    { id: 52, title: "BitcoinTalk", description: "Satoshi's original Bitcoin forum.", category: "Community", url: "https://bitcointalk.org/", icon: Users },
+    { id: 53, title: "Bitcoin Reddit", description: "Active Bitcoin discussion subreddit.", category: "Community", url: "https://www.reddit.com/r/Bitcoin/", icon: Users },
 
 
 
-    { id: 55, title: "Bitcoin Videos", description: "Educational Bitcoin video collection.", category: "Education", url: "https://www.lopp.net/", icon: BookOpen },
-    { id: 56, title: "Bitcoin Privacy Guide", description: "Privacy best practices.", category: "Security", url: "https://bitcoiner.guide/privacy/", icon: Shield },
+    { id: 54, title: "Bitcoin Videos", description: "Educational Bitcoin video collection.", category: "Education", url: "https://www.lopp.net/", icon: BookOpen },
+    { id: 55, title: "Bitcoin Privacy Guide", description: "Privacy best practices.", category: "Security", url: "https://bitcoiner.guide/privacy/", icon: Shield },
 
   ],
 
