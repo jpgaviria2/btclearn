@@ -89,7 +89,7 @@ const PersonalRecommendations = () => {
                 {recommendation.id === 'btcpayserver' && (
                   <div>
                     <a 
-                      href="https://merchant.btclearn.org/" 
+                      href="https://lnbucks.com/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
