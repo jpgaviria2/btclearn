@@ -54,6 +54,13 @@ const PersonalRecommendations = () => {
       description: "Jack Mallers discusses Bitcoin adoption and Lightning Network developments.",
       url: "https://www.youtube.com/@thejackmallersshow",
       featured: true
+    },
+    { 
+      id: 'prestonpysh', 
+      title: "We Study Billionaires Bitcoin Show", 
+      description: "Preston Pysh's Bitcoin investment discussions and analysis.",
+      url: "https://www.theinvestorspodcast.com/bitcoin-fundamentals/",
+      featured: true
     }
   ];
 
