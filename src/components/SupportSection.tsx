@@ -19,7 +19,9 @@ const SupportSection = () => {
         el.value = max.toString();
       } 
       const rangeInput = root.querySelector('.btcpay-input-range') as HTMLInputElement;
-      rangeInput.value = el.value;
+      if (rangeInput) {
+        rangeInput.value = el.value;
+      }
     }
 
     function handleSliderInput(event: Event) {
@@ -36,7 +38,10 @@ const SupportSection = () => {
       const root = target.closest('.btcpay-form') as HTMLFormElement;
       const price = parseInt(target.dataset.price || '1');
       if (isNaN(parseInt(target.value))) {
-        target.value = price.toString();
+        const priceInput = root.querySelector('.btcpay-input-price') as HTMLInputElement;
+        if (priceInput) {
+          priceInput.value = price.toString();
+        }
       }
       const min = parseInt(target.getAttribute('min') || '1');
       const max = parseInt(target.getAttribute('max') || '10000');
@@ -52,7 +57,6 @@ const SupportSection = () => {
       const element = el as HTMLInputElement;
       if (!element.dataset.initialized) {
         element.addEventListener('input', handleSliderInput);
-        element.addEventListener('change', handleSliderChange);
         element.dataset.initialized = 'true';
       }
     });
@@ -61,8 +65,8 @@ const SupportSection = () => {
     document.querySelectorAll(".btcpay-form .btcpay-input-price").forEach((el) => {
       const element = el as HTMLInputElement;
       if (!element.dataset.initialized) {
-        element.addEventListener('input', handlePriceInput);
         element.addEventListener('change', handleSliderChange);
+        element.addEventListener('input', handlePriceInput);
         element.dataset.initialized = 'true';
       }
     });
@@ -72,14 +76,13 @@ const SupportSection = () => {
       document.querySelectorAll(".btcpay-form .btcpay-input-range").forEach((el) => {
         const element = el as HTMLInputElement;
         element.removeEventListener('input', handleSliderInput);
-        element.removeEventListener('change', handleSliderChange);
         element.dataset.initialized = '';
       });
 
       document.querySelectorAll(".btcpay-form .btcpay-input-price").forEach((el) => {
         const element = el as HTMLInputElement;
-        element.removeEventListener('input', handlePriceInput);
         element.removeEventListener('change', handleSliderChange);
+        element.removeEventListener('input', handlePriceInput);
         element.dataset.initialized = '';
       });
     };
@@ -147,7 +150,8 @@ const SupportSection = () => {
                   data-price="1" 
                   style={{width: '209px'}} 
                 />
-                <select name="currency" defaultValue="USD">
+                <select name="currency" defaultValue="SATS">
+                  <option value="SATS">SATS</option>
                   <option value="USD">USD</option>
                   <option value="GBP">GBP</option>
                   <option value="EUR">EUR</option>
