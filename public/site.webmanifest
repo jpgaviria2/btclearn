@@ -1,0 +1,25 @@
+{
+  "name": "BTCLearn - Bitcoin Education Hub",
+  "short_name": "BTCLearn",
+  "description": "Comprehensive hub for Bitcoin-only resources, education, podcasts, wallets, and tools",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fef3c7",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "finance", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}
