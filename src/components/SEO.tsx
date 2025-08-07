@@ -16,8 +16,8 @@ const SEO: React.FC<SEOProps> = ({
   title = "BTCLearn - Bitcoin-Only Resources & Education Hub | Learn Bitcoin",
   description = "Comprehensive hub for Bitcoin-only resources, education, podcasts, wallets, and tools. Curated collection of 50+ Bitcoin resources from leading educators and developers. Start your Bitcoin journey today.",
   keywords = "Bitcoin, BTC, Bitcoin education, Bitcoin resources, Bitcoin wallets, Bitcoin podcasts, Bitcoin security, cryptocurrency, digital currency, Bitcoin learning, Bitcoin tutorials, Bitcoin guides, Bitcoin privacy, Bitcoin sovereignty, Bitcoin-only, cryptocurrency education",
-  canonical = "https://btclearn.com/",
-  ogImage = "https://btclearn.com/og-image.png",
+  canonical = "https://btclearn.org/",
+  ogImage = "https://btclearn.org/og-image.png",
   ogType = "website",
   twitterCard = "summary_large_image",
   structuredData
@@ -31,7 +31,7 @@ const SEO: React.FC<SEOProps> = ({
     "mainEntity": {
       "@type": "WebSite",
       "name": "BTCLearn",
-      "url": "https://btclearn.com/"
+      "url": "https://btclearn.org/"
     }
   };
 

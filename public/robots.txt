@@ -14,7 +14,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://btclearn.com/sitemap.xml
+Sitemap: https://btclearn.org/sitemap.xml
 
 # Crawl-delay for all bots
 Crawl-delay: 1
