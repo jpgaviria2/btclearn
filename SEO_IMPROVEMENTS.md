@@ -192,7 +192,6 @@ This document outlines all the SEO improvements implemented to enhance Google vi
 1. **Replace placeholder values**:
    - Google Analytics measurement ID
    - Google Search Console verification code
-   - Actual domain name in sitemap
    - Real social media handles
 
 2. **Create missing assets**:
