@@ -13,13 +13,7 @@ const Header = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Your comprehensive hub for Bitcoin-only resources, education, and tools
           </p>
-          <nav className="mt-4" role="navigation" aria-label="Main navigation">
-            <ul className="flex justify-center space-x-6 text-sm">
-              <li><a href="#resources" className="text-orange-600 hover:text-orange-700 transition-colors">Resources</a></li>
-              <li><a href="#tutorials" className="text-orange-600 hover:text-orange-700 transition-colors">Tutorials</a></li>
-              <li><a href="#support" className="text-orange-600 hover:text-orange-700 transition-colors">Support</a></li>
-            </ul>
-          </nav>
+
         </div>
       </div>
     </header>
